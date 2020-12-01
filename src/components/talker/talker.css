@@ -3,11 +3,12 @@
   flex-direction: column;
 }
 .instruction {
+  font-size: 1.2em;
   font-family: "ChicagoFLF Regular";
 }
 
 #output {
-  height: 55vh;
+  height: 50vh;
   font-family: "ChicagoFLF Regular";
   padding: 5px;
 }
@@ -17,20 +18,18 @@
   padding: 5px;
 }
 
+#input p {
+  margin: 10px;
+}
+
 .talkButton {
   font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px;
+  color: #1502ea;
 }
 #buttonImg {
   padding: 10px;
-}
-
-.onTalking {
-  color: #999999;
-}
-.notTalkng {
-  color: #1502ea;
 }

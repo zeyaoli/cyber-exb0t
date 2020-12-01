@@ -10,6 +10,9 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import "./talker.css";
 
+//https://github.com/JamesBrill/react-speech-recognition
+//https://github.com/compulim/react-say
+
 const Talker = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [userInput, setUserInput] = useState("");

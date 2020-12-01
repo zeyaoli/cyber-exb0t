@@ -1,0 +1,10 @@
+.canvasBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.innerCanvas {
+  margin: 20px;
+  height: 85vh;
+  overflow-y: hidden;
+}
