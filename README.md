@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To-do
+
+- [ ] An intro pop up to trigger text to speech (can be nsfw.. or instruction)
+- [ ] Speech To Text Response
+- [ ] DialogueFlow
+- [ ] Canvas
+- [ ] Text to Speech (will ref react-say)
+
+## Done
+
+- [x] Basic interface
+- [x] Speech to text to the user input display
+
 ## Available Scripts
 
 In the project directory, you can run:

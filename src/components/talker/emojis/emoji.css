@@ -1,0 +1,8 @@
+.emojiWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.emoji {
+  padding: 10px;
+}

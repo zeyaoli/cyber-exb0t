@@ -1,0 +1,16 @@
+.chatWrapper {
+  margin: 10px;
+  overflow-wrap: break-word;
+}
+
+.chatName {
+  font-size: 14px;
+  font-family: "ChicagoFLF Regular";
+}
+.bot {
+  color: #ff0302;
+}
+
+.human {
+  color: #1502ea;
+}
