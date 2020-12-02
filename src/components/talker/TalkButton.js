@@ -4,7 +4,15 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import { getState } from "../../utils/state";
 
-const TalkButton = ({ setUserInput, transcript, resetTranscript }) => {
+const TalkButton = ({
+  setUserInput,
+  transcript,
+  resetTranscript,
+  setMessage,
+  setMessages,
+  message,
+  messages,
+}) => {
   const [isTalking, setIsTalking] = useState(false);
   let myInput = getState().me.input;
 
@@ -17,6 +25,8 @@ const TalkButton = ({ setUserInput, transcript, resetTranscript }) => {
       SpeechRecognition.stopListening();
       myInput = transcript;
       setUserInput(myInput);
+      setMessage({ name: "human", message: myInput });
+      setMessages((messages) => [...messages, message]);
       //   resetTranscript();
       setIsTalking(false);
     }

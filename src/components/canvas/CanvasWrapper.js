@@ -3,7 +3,7 @@ import TitleBar from "../TitleBar";
 import { getState } from "../../utils/state";
 import "./canvas.css";
 
-const CanvasWrapper = () => {
+const CanvasWrapper = ({ message, setMessage }) => {
   return (
     <div className={`window canvasWrapper`}>
       <TitleBar name='cyber$exb0t' />
