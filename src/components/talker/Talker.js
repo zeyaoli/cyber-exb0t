@@ -13,14 +13,9 @@ import "./talker.css";
 //https://github.com/JamesBrill/react-speech-recognition
 //https://github.com/compulim/react-say
 
-const Talker = ({ message, setMessage }) => {
+const Talker = ({ messages, setMessages }) => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [userInput, setUserInput] = useState("");
-  const data = getData();
-  const [messages, setMessages] = useState([
-    { name: "cyber$exb0t", message: data.response.init },
-  ]);
-
   return (
     <div className={`window talker`}>
       <TitleBar name='dirty-talker' />
@@ -30,20 +25,13 @@ const Talker = ({ message, setMessage }) => {
         </p>
         <hr className='solid'></hr>
         <OutputDisplay messages={messages} />
-        <EmojiWrapper
-          message={message}
-          messages={messages}
-          setMessage={setMessage}
-          setMessages={setMessages}
-        />
+        <EmojiWrapper messages={messages} setMessages={setMessages} />
         <InputDisplay userInput={userInput} />
         <TalkButton
           setUserInput={setUserInput}
           transcript={transcript}
           resetTranscript={resetTranscript}
-          message={message}
           messages={messages}
-          setMessage={setMessage}
           setMessages={setMessages}
         />
       </div>

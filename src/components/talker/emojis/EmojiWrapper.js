@@ -4,11 +4,9 @@ import "./emoji.css";
 
 export const EmojisContext = React.createContext();
 
-const EmojiWrapper = ({ message, setMessage, messages, setMessages }) => {
+const EmojiWrapper = ({ messages, setMessages }) => {
   const handleClick = (response) => {
-    setMessage(response);
-    console.log(message);
-    setMessages((messages) => [...messages, message]);
+    setMessages((messages) => [...messages, response]);
   };
   return (
     // pass an onclick callback to Emoji

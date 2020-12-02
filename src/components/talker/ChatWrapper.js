@@ -17,7 +17,17 @@ const ChatWrapper = ({ messages }) => {
     );
   });
 
-  return <div className='chatWrapper'>{items}</div>;
+  return (
+    <div className='chatWrapper'>
+      {/* <p
+        className={`chatName ${props.name === "cyber$exb0t" ? `bot` : `human`}`}
+      >
+        {props.name}
+      </p>
+      <p className='chatOutput'>{props.message}</p> */}
+      {items}
+    </div>
+  );
 };
 
 export default ChatWrapper;

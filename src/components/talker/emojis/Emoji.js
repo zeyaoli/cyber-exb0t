@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { getData } from "../../../utils/data";
 
 const Emoji = (props) => {
   let response = null;
   const handleClick = () => {
-    const botName = "cyber$exb0t";
+    const botName = getData().botName;
     if (props.name === "heart") {
       response = { name: botName, message: getData().response.heart };
     }

@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import Talker from "../components/talker/Talker";
 import CanvasWrapper from "../components/canvas/CanvasWrapper";
 import "./App.css";
-
+import { getData } from "../utils/data";
 const App = () => {
-  const [message, setMessage] = useState("");
+  const data = getData();
+  const botName = data.botName;
+  const [messages, setMessages] = useState([
+    { name: botName, message: data.response.init },
+  ]);
+
   return (
     <div className='app'>
-      <CanvasWrapper message={message} setMessage={setMessage} />
-      <Talker message={message} setMessage={setMessage} />
+      <CanvasWrapper />
+      <Talker messages={messages} setMessages={setMessages} />
     </div>
   );
 };

@@ -8,9 +8,7 @@ const TalkButton = ({
   setUserInput,
   transcript,
   resetTranscript,
-  setMessage,
   setMessages,
-  message,
   messages,
 }) => {
   const [isTalking, setIsTalking] = useState(false);
@@ -25,8 +23,14 @@ const TalkButton = ({
       SpeechRecognition.stopListening();
       myInput = transcript;
       setUserInput(myInput);
-      setMessage({ name: "human", message: myInput });
-      setMessages((messages) => [...messages, message]);
+      //if blank, don't send out to the output
+      if (transcript !== "") {
+        setMessages((messages) => [
+          ...messages,
+          { name: "human", message: myInput },
+        ]);
+      }
+
       //   resetTranscript();
       setIsTalking(false);
     }
