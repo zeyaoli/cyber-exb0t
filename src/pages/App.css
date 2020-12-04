@@ -2,7 +2,23 @@
   display: flex;
   flex-direction: row;
   height: 100vh;
+  position: relative;
+  width: 100%;
 }
+.beforePopup {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+
+.afterPopup {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+
 .window {
   margin: 10px;
 }
@@ -22,3 +38,41 @@ hr.solid {
   height: auto;
   overflow-y: scroll;
 }
+
+.scrim {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.popup {
+  position: absolute;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+
+  transform: translate(
+    -50%,
+    -50%
+  ); /* This is a shorthand of
+                                       translateX(-50%) and translateY(-50%) */
+}
+
+#window-popup {
+  padding: 10px;
+  font-size: 1.7em;
+  font-family: "ChicagoFLF Regular";
+  text-align: center;
+}
+
+.popup button {
+  padding: 5px;
+  font-size: 1em;
+}
+
+/* .beforePopup {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+} */

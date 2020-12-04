@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TitleBar from "../TitleBar";
 import OutputDisplay from "./OutputDisplay";
 import EmojiWrapper from "./emojis/EmojiWrapper";
@@ -7,15 +7,17 @@ import TalkButton from "./TalkButton";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import { getData } from "../../utils/data";
+import { useSpeechSynthesis } from "react-speech-kit";
 import "./talker.css";
 
 //https://github.com/JamesBrill/react-speech-recognition
-//https://github.com/compulim/react-say
 
-const Talker = ({ messages, setMessages }) => {
+const Talker = ({ messages, setMessages, addMessage }) => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [userInput, setUserInput] = useState("");
+  const lastMessage = messages[messages.length - 1].message;
+  console.log(lastMessage);
+  const { speak } = useSpeechSynthesis();
   return (
     <div className={`window talker`}>
       <TitleBar name='dirty-talker' />
@@ -25,7 +27,7 @@ const Talker = ({ messages, setMessages }) => {
         </p>
         <hr className='solid'></hr>
         <OutputDisplay messages={messages} />
-        <EmojiWrapper messages={messages} setMessages={setMessages} />
+        <EmojiWrapper addMessage={addMessage} />
         <InputDisplay userInput={userInput} />
         <TalkButton
           setUserInput={setUserInput}

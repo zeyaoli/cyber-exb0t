@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TitleBar from "../TitleBar";
-import { getState } from "../../utils/state";
 import "./canvas.css";
 
 const CanvasWrapper = ({ message, setMessage }) => {

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import { getState } from "../../utils/state";
+import { getData } from "../../utils/data";
 
 const TalkButton = ({
   setUserInput,
@@ -12,7 +12,8 @@ const TalkButton = ({
   messages,
 }) => {
   const [isTalking, setIsTalking] = useState(false);
-  let myInput = getState().me.input;
+
+  const humanName = getData().humanName;
 
   const handleTalking = () => {
     if (!isTalking) {
@@ -21,13 +22,12 @@ const TalkButton = ({
       SpeechRecognition.startListening();
     } else {
       SpeechRecognition.stopListening();
-      myInput = transcript;
-      setUserInput(myInput);
+      setUserInput(transcript);
       //if blank, don't send out to the output
       if (transcript !== "") {
         setMessages((messages) => [
           ...messages,
-          { name: "human", message: myInput },
+          { name: humanName, message: transcript },
         ]);
       }
 

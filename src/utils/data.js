@@ -1,5 +1,6 @@
 const data = {
   botName: "cyber$exb0t",
+  humanName: "da_human",
   prompt: "",
   response: {
     init:

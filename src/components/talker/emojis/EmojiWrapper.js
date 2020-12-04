@@ -1,12 +1,12 @@
 import React from "react";
 import Emoji from "./Emoji";
 import "./emoji.css";
+import { useSpeechSynthesis } from "react-speech-kit";
 
-export const EmojisContext = React.createContext();
-
-const EmojiWrapper = ({ messages, setMessages }) => {
+const EmojiWrapper = ({ addMessage }) => {
+  const { speak } = useSpeechSynthesis();
   const handleClick = (response) => {
-    setMessages((messages) => [...messages, response]);
+    addMessage(response);
   };
   return (
     // pass an onclick callback to Emoji
@@ -16,9 +16,21 @@ const EmojiWrapper = ({ messages, setMessages }) => {
         img='/assets/emojis/heart.png'
         onClick={handleClick}
       />
-      <Emoji name='glasses-eye' img='/assets/emojis/glasses.png' />
-      <Emoji name='heart-eyes' img='/assets/emojis/heart-eyes.png' />
-      <Emoji name='laugh' img='/assets/emojis/laugh.png' />
+      <Emoji
+        name='glasses-eye'
+        img='/assets/emojis/glasses.png'
+        onClick={handleClick}
+      />
+      <Emoji
+        name='heart-eyes'
+        img='/assets/emojis/heart-eyes.png'
+        onClick={handleClick}
+      />
+      <Emoji
+        name='laugh'
+        img='/assets/emojis/laugh.png'
+        onClick={handleClick}
+      />
     </div>
   );
 };

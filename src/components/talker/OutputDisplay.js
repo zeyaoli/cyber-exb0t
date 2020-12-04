@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import ChatWrapper from "../talker/ChatWrapper";
 
 const OutputDisplay = ({ messages }) => {
   const messagesEndRef = useRef(null);
 
+  //auto scroll to the bottom: https://stackoverflow.com/questions/37620694/how-to-scroll-to-bottom-in-react
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({
@@ -13,6 +14,11 @@ const OutputDisplay = ({ messages }) => {
       });
     }
   }, [messages]);
+
+  // useEffect(()=>{
+
+  // },)
+
   return (
     <div className={`container`} id='output'>
       <ChatWrapper messages={messages} />
