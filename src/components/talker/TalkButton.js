@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import SocketContext from "../../utils/SocketContext";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -11,6 +12,7 @@ const TalkButton = ({
   setMessages,
   messages,
 }) => {
+  const socket = useContext(SocketContext);
   const [isTalking, setIsTalking] = useState(false);
 
   const humanName = getData().humanName;
@@ -30,6 +32,8 @@ const TalkButton = ({
           { name: humanName, message: transcript },
         ]);
       }
+      // console.log(transcript);
+      socket.emit("userInput", { transcript });
 
       //   resetTranscript();
       setIsTalking(false);

@@ -1,10 +1,8 @@
 import React from "react";
 import Emoji from "./Emoji";
 import "./emoji.css";
-import { useSpeechSynthesis } from "react-speech-kit";
 
 const EmojiWrapper = ({ addMessage }) => {
-  const { speak } = useSpeechSynthesis();
   const handleClick = (response) => {
     addMessage(response);
   };

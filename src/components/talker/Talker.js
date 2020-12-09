@@ -12,11 +12,16 @@ import "./talker.css";
 
 //https://github.com/JamesBrill/react-speech-recognition
 
-const Talker = ({ messages, setMessages, addMessage }) => {
-  const { transcript, resetTranscript } = useSpeechRecognition();
+const Talker = ({
+  messages,
+  setMessages,
+  addMessage,
+  transcript,
+  resetTranscript,
+}) => {
   const [userInput, setUserInput] = useState("");
   const lastMessage = messages[messages.length - 1].message;
-  console.log(lastMessage);
+  // console.log(lastMessage);
   const { speak } = useSpeechSynthesis();
   return (
     <div className={`window talker`}>
