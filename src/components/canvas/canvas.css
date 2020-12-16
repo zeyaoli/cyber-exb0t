@@ -1,10 +1,15 @@
 .canvasBody {
   display: flex;
   flex-direction: column;
+  font-family: "ChicagoFLF Regular";
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .innerCanvas {
   margin: 20px;
-  height: 85vh;
-  overflow-y: hidden;
+  padding: 20px;
+  min-height: 75vh;
+  overflow-y: hidden !important;
 }

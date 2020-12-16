@@ -13,6 +13,7 @@ import "./talker.css";
 //https://github.com/JamesBrill/react-speech-recognition
 
 const Talker = ({
+  voiceIndex,
   messages,
   setMessages,
   addMessage,
@@ -32,7 +33,7 @@ const Talker = ({
         </p>
         <hr className='solid'></hr>
         <OutputDisplay messages={messages} />
-        <EmojiWrapper addMessage={addMessage} />
+        <EmojiWrapper addMessage={addMessage} voiceIndex={voiceIndex} />
         <InputDisplay userInput={userInput} />
         <TalkButton
           setUserInput={setUserInput}
@@ -40,6 +41,7 @@ const Talker = ({
           resetTranscript={resetTranscript}
           messages={messages}
           setMessages={setMessages}
+          addMessage={addMessage}
         />
       </div>
     </div>

@@ -2,9 +2,9 @@ import React from "react";
 import Emoji from "./Emoji";
 import "./emoji.css";
 
-const EmojiWrapper = ({ addMessage }) => {
+const EmojiWrapper = ({ addMessage, voiceIndex }) => {
   const handleClick = (response) => {
-    addMessage(response);
+    addMessage(response, voiceIndex);
   };
   return (
     // pass an onclick callback to Emoji

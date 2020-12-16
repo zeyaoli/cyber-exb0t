@@ -4,6 +4,7 @@ import Disc from "./Disc";
 const Discs = ({ changeVoice, speaking }) => {
   return (
     <div className='discs'>
+      <h4>Click below to test out a voice</h4>
       <Disc
         changeVoice={changeVoice}
         speaking={speaking}
@@ -20,13 +21,13 @@ const Discs = ({ changeVoice, speaking }) => {
         changeVoice={changeVoice}
         speaking={speaking}
         name='Voice 3'
-        voiceNum='15'
+        voiceNum='11'
       />
       <Disc
         changeVoice={changeVoice}
         speaking={speaking}
         name='Voice 4'
-        voiceNum='20'
+        voiceNum='33'
       />
     </div>
   );

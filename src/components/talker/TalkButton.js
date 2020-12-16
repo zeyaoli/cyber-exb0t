@@ -11,6 +11,7 @@ const TalkButton = ({
   resetTranscript,
   setMessages,
   messages,
+  addMessage,
 }) => {
   const socket = useContext(SocketContext);
   const [isTalking, setIsTalking] = useState(false);
@@ -27,10 +28,11 @@ const TalkButton = ({
       setUserInput(transcript);
       //if blank, don't send out to the output
       if (transcript !== "") {
-        setMessages((messages) => [
-          ...messages,
-          { name: humanName, message: transcript },
-        ]);
+        // setMessages((messages) => [
+        //   ...messages,
+        //   { name: humanName, message: transcript },
+        // ]);
+        addMessage({ name: humanName, message: transcript });
       }
       // console.log(transcript);
       socket.emit("userInput", { transcript });
