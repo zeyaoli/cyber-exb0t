@@ -1,10 +1,10 @@
 import React from "react";
 import Disc from "./Disc";
+import "./Discs.css";
 
 const Discs = ({ changeVoice, speaking }) => {
   return (
     <div className='discs'>
-      <h4>Click below to test out a voice</h4>
       <Disc
         changeVoice={changeVoice}
         speaking={speaking}

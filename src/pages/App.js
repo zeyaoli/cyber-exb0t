@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import Talker from "../components/talker/Talker";
-import CanvasWrapper from "../components/canvas/CanvasWrapper";
+// import CanvasWrapper from "../components/canvas/CanvasWrapper";
 import InitPopup from "../components/InitPopup";
 import "./App.css";
 import { getData } from "../utils/data";
@@ -21,7 +21,7 @@ const App = () => {
   const { speak, voices, speaking } = useSpeechSynthesis();
   // set Voices
   const [voiceIndex, setVoiceIndex] = useState(null);
-  console.log(voiceIndex);
+  // console.log(voiceIndex);
   const changeVoice = (text, index) => {
     setVoiceIndex(index);
     speak({ text, voice: voices[index] });
@@ -76,13 +76,9 @@ const App = () => {
           messages={messages}
         />
         <div className={isPopupDone ? `afterPopup` : `beforePopup`}>
-          <CanvasWrapper
-            transcript={transcript}
+          <Talker
             changeVoice={changeVoice}
             speaking={speaking}
-            messages={messages}
-          />
-          <Talker
             voiceIndex={voiceIndex}
             messages={messages}
             setMessages={setMessages}

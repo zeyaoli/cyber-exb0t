@@ -16,7 +16,7 @@ app.use(router);
 // console.log("./service_account.json");
 
 //init google dialogflow node client
-const projectId = "cybersexbot";
+const projectId = "cybersexbot2-btqa";
 const dialogflow = require("@google-cloud/dialogflow");
 const { v4: uuidv4 } = require("uuid");
 const sessionId = uuidv4();

@@ -1,7 +1,8 @@
 import React from "react";
+import { getData } from "../../../utils/data";
 
 const Disc = ({ changeVoice, name, voiceNum, speaking }) => {
-  const text = "Are you ready to have sex with me? Press the mic and say yes";
+  const text = getData().initQuestion;
   const testVoice = () => {
     if (!speaking) {
       changeVoice(text, voiceNum);

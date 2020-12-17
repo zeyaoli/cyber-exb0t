@@ -4,10 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## To-do
 
-- [ ] Different voices
-- [ ] Speech To Text Response
-- [ ] DialogueFlow
-- [ ] Canvas
+- [ ] More conversation
+- [ ] Think about background (fake ads...?)
 
 ## Done
 
@@ -15,6 +13,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Speech to text to the user input display
 - [x] Text to Speech (will ref react-say)
 - [x] An intro pop up to trigger text to speech (can be nsfw.. or instruction)
+- [x] Different voices
+- [x] Speech To Text Response
+- [x] DialogueFlow
 
 ## Available Scripts
 

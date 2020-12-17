@@ -15,7 +15,7 @@ const EmojiWrapper = ({ addMessage, voiceIndex }) => {
         onClick={handleClick}
       />
       <Emoji
-        name='glasses-eye'
+        name='cool'
         img='/assets/emojis/glasses.png'
         onClick={handleClick}
       />

@@ -9,6 +9,10 @@ const Emoji = (props) => {
       response = { name: botName, message: getData().response.heart };
     } else if (props.name === "heart-eyes") {
       response = { name: botName, message: getData().response.heartEye };
+    } else if (props.name === "laugh") {
+      response = { name: botName, message: getData().response.laugh };
+    } else if (props.name === "cool") {
+      response = { name: botName, message: getData().response.cool };
     }
     // invokes the callback with the new value
     props.onClick(response);

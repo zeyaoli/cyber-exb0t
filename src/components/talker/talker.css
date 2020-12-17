@@ -8,12 +8,12 @@
 }
 
 #output {
-  height: 50vh;
+  height: 40vh;
   font-family: "ChicagoFLF Regular";
   padding: 5px;
 }
 #input {
-  height: 10vh;
+  height: 20vh;
   font-family: "ChicagoFLF Regular";
   padding: 5px;
 }

@@ -19,6 +19,8 @@ const Talker = ({
   addMessage,
   transcript,
   resetTranscript,
+  changeVoice,
+  speaking,
 }) => {
   const [userInput, setUserInput] = useState("");
   const lastMessage = messages[messages.length - 1].message;
@@ -26,7 +28,7 @@ const Talker = ({
   const { speak } = useSpeechSynthesis();
   return (
     <div className={`window talker`}>
-      <TitleBar name='dirty-talker' />
+      <TitleBar name='cyber$exb0t' />
       <div className='window-body'>
         <p className='instruction'>
           press the mic icon at the bottom of screen to speak to your bot
@@ -34,7 +36,11 @@ const Talker = ({
         <hr className='solid'></hr>
         <OutputDisplay messages={messages} />
         <EmojiWrapper addMessage={addMessage} voiceIndex={voiceIndex} />
-        <InputDisplay userInput={userInput} />
+        <InputDisplay
+          changeVoice={changeVoice}
+          speaking={speaking}
+          messages={messages}
+        />
         <TalkButton
           setUserInput={setUserInput}
           transcript={transcript}
